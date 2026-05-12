@@ -1,8 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class scrLogin : MonoBehaviour
+public class scrLoadplayer : scrSaveplayer
 {
     public InputField loginID = null;
     public InputField loginPassword = null;
@@ -16,14 +16,11 @@ public class scrLogin : MonoBehaviour
         bool success = false;
 
         // 저장된 계정 검사
-        for (int i = 0; i < userData.ids.Count; i++)
-        {
-            if (inputID == userData.ids[i] &&
-               inputPassword == userData.passwords[i])
+         if (inputID == PlayerPrefs.GetString(sName) &&
+               inputPassword == PlayerPrefs.GetString(sPassword))
             {
                 success = true;
-                break;
-            }
+                
         }
 
         // 결과

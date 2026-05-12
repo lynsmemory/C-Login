@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public static class UserDatabase
+public static class userData
 {
     // 아이디 저장
     public static List<string> ids = new List<string>();
